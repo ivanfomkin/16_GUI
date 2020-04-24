@@ -64,9 +64,10 @@ public class MyForm {
                     if (dataFromArea.length < 2) {
                         showErrorMessage();
                     } else {
+                        clearTextAreas();
                         firstNameTextArea.setText(dataFromArea[0]);
                         lastNameTextArea.setText(dataFromArea[1]);
-                        if (dataFromArea.length == 3) {
+                        if (dataFromArea.length > 2) {
                             patronymicTextArea.setText(dataFromArea[2]);
                         }
                         colExpButton.setText("Collapse");
@@ -146,6 +147,6 @@ public class MyForm {
     }
 
     private void showErrorMessage() {
-        JOptionPane.showMessageDialog(mainPanel, "Please, enter a name and last name");
+        JOptionPane.showMessageDialog(mainPanel, "Please, enter a name and last name", "Error", JOptionPane.ERROR_MESSAGE);
     }
 }
